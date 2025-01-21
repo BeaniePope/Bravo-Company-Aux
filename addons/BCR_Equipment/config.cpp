@@ -5,16 +5,22 @@ class CfgPatches
 		author="Queen"; 
         requiredAddons[]=
         {
-            "fallout_uniform_02"
+            "fallout_uniform_02",
+			"am_firearms"
         };
         requiredVersion= 0.1;
-        units[]={};
-        weapons[]= 
-        {
-            "BCR_MinigunBackpack_B",
+        units[]=
+		{
+			"BCR_MinigunBackpack_B",
 			"BCR_ANPRC76_B",
 			"BCR_ANPRC23_B",
 			"BCR_ANPRC2141_B"
+		};
+        weapons[]= 
+        {
+			"BCR_MissileLauncher",
+			"BCR_MissileLauncherSight",
+			"BCR_MissileLauncherSight_Shark"
         };
 	};
 };
