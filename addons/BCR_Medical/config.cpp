@@ -401,7 +401,7 @@ class ACE_Medical_Treatment_Actions
 		};
 		condition="true";
 		patientStateCondition=0;
-		callbackSuccess="[_player, _patient, 'Fixer'] call BCR_Medical_fnc_treatmentAdvanced_Fixer";
+		callbackSuccess="[_player, _patient, 'Fixer'] call BCR_fnc_treatmentAdvanced_Fixer";
 
     };
     class Super_Stimpak: Mysterious_Jar
