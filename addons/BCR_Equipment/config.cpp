@@ -25,6 +25,9 @@ class CfgPatches
 	};
 };
 
+class Components;
+class SensorTemplateVisual;
+
 class CfgAmmo
 {
 	class M_NLAW_AT_F;

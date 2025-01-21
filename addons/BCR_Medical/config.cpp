@@ -70,7 +70,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = "[BCR] Hydra";
+        displayName = "[1ST] Hydra";
         picture = "\BCR_Medical\data\ui\hydra_ca.paa";
         model = "\BCR_Medical\models\hydra.p3d";
         descriptionShort = "Raises HR and BP";
@@ -85,7 +85,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = " [BCR] Fixer";
+        displayName = " [1ST] Fixer";
         picture = "\BCR_Medical\data\ui\fixer.paa";
         model = "\BCR_Medical\models\fixer.p3d";
         descriptionShort = "Cures all overdoses and addictions";
@@ -99,7 +99,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = " [BCR] Diffused Stimpack";
+        displayName = " [1ST] Diffused Stimpack";
         picture = "\BCR_Medical\data\ui\diffusedstimpak.paa";
         model = "\BCR_Medical\models\diffusedstimpak.p3d";
         descriptionShort = "Bandages wounds over time";
@@ -113,7 +113,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = "[BCR] Calmex";
+        displayName = "[1ST] Calmex";
         picture = "\BCR_Medical\data\ui\calmex.paa";
         model = "\BCR_Medical\models\calmex.p3d";
         descriptionShort = "Decreases HR Increases BP";
@@ -127,7 +127,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = "[BCR] Buffout";
+        displayName = "[1ST] Buffout";
         picture = "\BCR_Medical\data\ui\buffout.paa";
         model = "\BCR_Medical\models\buffout.p3d";
         descriptionShort = "Increases HR Decreases BP";
@@ -141,7 +141,7 @@ class CfgWeapons
     {
         scope = 2;
         author = "Queen";
-        displayName = "[BCR] Super Stimpak";
+        displayName = "[1ST] Super Stimpak";
         picture = "\BCR_Medical\data\ui\superstimpak.paa";
         models = "\BCR_Medical\models\superstimpak.p3d";
         ACE_isMedicalItem = 1;
@@ -154,7 +154,7 @@ class CfgWeapons
     {
         scope = 2;
 		author="Queen";
-		displayName="[BCR] Mysterious Jar Item";
+		displayName="[1ST] Mysterious Jar Item";
 
 		class ItemInfo: CBA_MiscItem_ItemInfo
 		{
@@ -165,7 +165,7 @@ class CfgWeapons
     {
         scope = 1;
         author = "Queen";
-        displayName="[BCR] Coyote Chew Bundle";
+        displayName="[1ST] Coyote Chew Bundle";
 		class ItemInfo: CBA_MiscItem_ItemInfo
 		{
 			mass=0;
@@ -180,7 +180,7 @@ class CfgVehicles
 	{
 		scope = 1;
 		scopeCurator=2;
-		displayName="[BCR] Coyote Chew Bundle";
+		displayName="[1ST] Coyote Chew Bundle";
 		author="Queen";
 		vehicleClass="Magazines";
 		class TransportItems
@@ -201,7 +201,7 @@ class CfgMagazines
     {
         author = "Queen";
         scope=2;
-		displayName="[BCR] Mysterious Jar";
+		displayName="[1ST] Mysterious Jar";
 		descriptionShort="WAKE UP";
 		//model="\A3\Structures_F_EPA\Items\Medical\Painkillers_F.p3d";
 		picture="\BCR_Medical\data\ui\mysteriousjar.paa";
@@ -216,7 +216,7 @@ class CfgMagazines
     {
         author = "Queen";
         scope=2;
-		displayName="[BCR] Coyote Chew";
+		displayName="[1ST] Coyote Chew";
 		descriptionShort= "Soothes Pain";
 		model="\BCR_Medical\models\coyotechew.p3d";
 		picture="\BCR_Medical\data\ui\coyotechew.paa";
