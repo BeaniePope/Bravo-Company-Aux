@@ -33,7 +33,7 @@ class CfgAmmo
 	class M_NLAW_AT_F;
 	class BCR_Missile_AT: M_NLAW_AT_F
 	{
-		hit = 50;
+		hit = 100;
 		indirectHit = 25;
 		indirectHitRange = 2.4;
 		proximityExplosionDistance = 5;
@@ -50,7 +50,7 @@ class CfgAmmo
 		timeToLive = 8;
 		airFriction = 0.09;
 		sideAirFriction = 0.5;
-		maxSpeed = 180;
+		maxSpeed = 360;
 		initTime = 0.2;
 		thrustTime = 0.8;
 		thrust = 200;
