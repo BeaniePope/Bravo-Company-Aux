@@ -33,7 +33,7 @@ class CfgAmmo
 	class M_NLAW_AT_F;
 	class BCR_Missile_AT: M_NLAW_AT_F
 	{
-		hit = 100;
+		hit = 1020;
 		indirectHit = 25;
 		indirectHitRange = 2.4;
 		proximityExplosionDistance = 5;
