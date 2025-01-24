@@ -154,6 +154,8 @@ class CfgMagazines
 	{
 		displayName = "[1ST] Missile MK2";
 		ammo = "BCR_Missile_AT";
+		model = "";
+		modelSpecial = "";
 	};
 };
 
@@ -226,7 +228,7 @@ class CfgVehicles
 	class am_radio_tactical_grn;
 
 	//Radio Packs
-	class BCR_Radio_Backpack_B: am_radio_tactical_grn
+	class BCR_ANPRC76_B: am_radio_tactical_grn
 	{
 		author="Queen";
 		displayName="[1ST] AN/PRC 76";
@@ -239,7 +241,7 @@ class CfgVehicles
 		tf_subtype="digital_lr";
 		maximumLoad=300;
 	};
-	class BCR_Radio_Backpack_B: milrad_mod
+	class BCR_ANPRC23_B: milrad_mod
 	{
 		author="Queen";
 		displayName="[1ST] AN/PRC 23";
@@ -252,7 +254,7 @@ class CfgVehicles
 		tf_subtype="digital_lr";
 		maximumLoad=300;
 	};
-	class BCR__Radio_Backpack_B: prc77_mod
+	class BCR_ANPRC2141_B: prc77_mod
 	{
 		author="Queen";
 		displayName="[1ST] AN/PRC 2141";
