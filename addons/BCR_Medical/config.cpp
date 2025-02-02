@@ -72,7 +72,7 @@ class CfgWeapons
         author = "Queen";
         displayName = "[1ST] Hydra";
         picture = "\BCR_Medical\data\ui\hydra_ca.paa";
-        model = "\BCR_Medical\models\hydra.p3d";
+        model = "";
         descriptionShort = "Raises HR and BP";
         descriptionUse = "";
         ACE_isMedicalItem = 1;
@@ -87,7 +87,7 @@ class CfgWeapons
         author = "Queen";
         displayName = " [1ST] Fixer";
         picture = "\BCR_Medical\data\ui\fixer.paa";
-        model = "\BCR_Medical\models\fixer.p3d";
+        model = "";
         descriptionShort = "Cures all overdoses and addictions";
         ACE_isMedicalItem = 1;
         class itemInfo: CBA_MiscItem_ItemInfo
@@ -101,7 +101,7 @@ class CfgWeapons
         author = "Queen";
         displayName = " [1ST] Diffused Stimpack";
         picture = "\BCR_Medical\data\ui\diffusedstimpak.paa";
-        model = "\BCR_Medical\models\diffusedstimpak.p3d";
+        model = "";
         descriptionShort = "Bandages wounds over time";
         ACE_isMedicalItem = 1;
         class itemInfo: CBA_MiscItem_ItemInfo
@@ -115,7 +115,7 @@ class CfgWeapons
         author = "Queen";
         displayName = "[1ST] Calmex";
         picture = "\BCR_Medical\data\ui\calmex.paa";
-        model = "\BCR_Medical\models\calmex.p3d";
+        model = "";
         descriptionShort = "Decreases HR Increases BP";
         ACE_isMedicalItem = 1;
         class itemInfo: CBA_MiscItem_ItemInfo
@@ -129,7 +129,7 @@ class CfgWeapons
         author = "Queen";
         displayName = "[1ST] Buffout";
         picture = "\BCR_Medical\data\ui\buffout.paa";
-        model = "\BCR_Medical\models\buffout.p3d";
+        model = "";
         descriptionShort = "Increases HR Decreases BP";
         ACE_isMedicalItem = 1;
         class itemInfo: CBA_MiscItem_ItemInfo
@@ -143,7 +143,7 @@ class CfgWeapons
         author = "Queen";
         displayName = "[1ST] Super Stimpak";
         picture = "\BCR_Medical\data\ui\superstimpak.paa";
-        models = "\BCR_Medical\models\superstimpak.p3d";
+        models = "";
         ACE_isMedicalItem = 1;
         class itemInfo: CBA_MiscItem_ItemInfo
         {
@@ -218,7 +218,7 @@ class CfgMagazines
         scope=2;
 		displayName="[1ST] Coyote Chew";
 		descriptionShort= "Soothes Pain";
-		model="\BCR_Medical\models\coyotechew.p3d";
+		model="";
 		picture="\BCR_Medical\data\ui\coyotechew.paa";
 		ammo="";
 		count=10;

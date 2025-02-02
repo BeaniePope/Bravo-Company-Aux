@@ -1,3 +1,4 @@
+
 class CfgPatches
 {
 	class BCR_Equipment
@@ -6,7 +7,8 @@ class CfgPatches
         requiredAddons[]=
         {
             "fallout_uniform_02",
-			"am_firearms"
+			"am_firearms",
+			"PSC_Equipment"
         };
         requiredVersion= 0.1;
         units[]=
@@ -27,6 +29,7 @@ class CfgPatches
 
 class Components;
 class SensorTemplateVisual;
+
 
 class CfgAmmo
 {
@@ -172,13 +175,16 @@ class CfgMagazineWells
 
 class CfgWeapons
 {
+		class ItemInfo;
 	class AM_launch_MissileLauncher;
 	class AM_launch_MissileLauncherSight;
 	class AM_launch_MissileLauncherSight_Shark;
+	class PSC_NCR_Trooper_Brown_U;
+	class PSC_NCR_Trooper_Brown_H;
 
 	class BCR_MissileLauncher: AM_launch_MissileLauncher
 	{
-		displayName = "[1ST] LGAW MK2"
+		displayName = "[1ST] LGAW MK2";
 		ace_reloadlaunchers_enabled = 1;
 		magazines[]=
 		{
@@ -193,7 +199,7 @@ class CfgWeapons
 
 	class BCR_MissileLauncherSight: AM_launch_MissileLauncherSight
 	{
-		displayName = "[1ST] LGAW MK2 (Guided)"
+		displayName = "[1ST] LGAW MK2 (Guided)";
 		ace_reloadlaunchers_enabled = 1;
 		magazines[]=
 		{
@@ -207,7 +213,7 @@ class CfgWeapons
 	};
 	class BCR_MissileLauncherSight_Shark: AM_launch_MissileLauncherSight_Shark
 	{
-		displayName = "[1ST] LGAW MK2 (Guided/Painted)"
+		displayName = "[1ST] LGAW MK2 (Guided/Painted)";
 		ace_reloadlaunchers_enabled = 1;
 		magazines[]=
 		{
@@ -220,12 +226,96 @@ class CfgWeapons
 		descriptionShort = "NCR's newest Last Generation AT weapon.";
 	};
 
+
+	class BCR_Trooper_CLUB_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Club)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_CLUB_UN";
+		};
+	};
+
+	class BCR_Trooper_CLUB_MED_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Club Medic)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_CLUB_MED_UN";
+		};
+	};
+
+	class BCR_Trooper_DIAMOND_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Diamond)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_DIAMOND_UN";
+		};
+	};
+
+	class BCR_Trooper_DIAMOND_MED_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Diamond Medic)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_DIAMOND_MED_UN";
+		};
+	};
+
+	class BCR_Trooper_HEART_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Heart)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_HEART_UN";
+		};
+	};
+
+	class BCR_Trooper_HEART_MED_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Heart Medic)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_HEART_MED_UN";
+		};
+	};
+
+	class BCR_Trooper_SPADE_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Spade)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_SPADE_UN";
+		};
+	};
+
+	class BCR_Trooper_SPADE_MED_U:PSC_NCR_Trooper_Brown_U{
+		displayName = "[1ST] NCR Trooper Uniform (Spade Medic)";
+		scope = 2;
+		class ItemInfo: ItemInfo {
+			uniformClass = "BCR_Trooper_SPADE_MED_UN";
+		};
+	};
+
+	class BCR_Trooper_HELM_H:PSC_NCR_Trooper_Brown_H{
+		displayName = "[1ST] NCR Trooper Helmet (Helm)";
+		scope = 2;
+		hiddenSelectionsTextures[]={
+			"BCR_Equipment\data\textures\HELM.paa"
+		};
+	};
+
+	class BCR_Trooper_HELM_MED_H:PSC_NCR_Trooper_Brown_H{
+		displayName = "[1ST] NCR Trooper Helmet (Helm Medic)";
+		scope = 2;
+		hiddenSelectionsTextures[]={
+			"BCR_Equipment\data\textures\HELM_MED.paa"
+		};
+	};
+
 };
+
 class CfgVehicles
 {
+	class ItemInfo;
 	class prc77_mod;
 	class milrad_mod;
 	class am_radio_tactical_grn;
+	class PSC_NCR_Trooper_Brown_UN;
 
 	//Radio Packs
 	class BCR_ANPRC76_B: am_radio_tactical_grn
@@ -275,4 +365,78 @@ class CfgVehicles
         displayName = "[1ST] Minigun Backpack";
         maximumLoad=650;
     };
+
+
+	class BCR_Trooper_CLUB_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\CLUB.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_CLUB_U";
+	};
+
+	class BCR_Trooper_CLUB_MED_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\CLUB_MED.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_CLUB_MED_U";
+	};
+
+	class BCR_Trooper_DIAMOND_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\DIAMOND.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_DIAMOND_U";
+	};
+
+	class BCR_Trooper_DIAMOND_MED_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\DIAMOND_MED.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_DIAMOND_MED_U";
+	};
+
+	class BCR_Trooper_HEART_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\HEART.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_HEART_U";
+	};
+
+	class BCR_Trooper_HEART_MED_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\HEART_MED.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_HEART_MED_U";
+	};
+
+	class BCR_Trooper_SPADE_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\SPADE.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_SPADE_U";
+	};
+
+	class BCR_Trooper_SPADE_MED_UN:PSC_NCR_Trooper_Brown_UN{
+		hiddenSelectionsTextures[]={ 
+			"BCR_Equipment\data\textures\SPADE_MED.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+		};
+		uniformClass="BCR_Trooper_SPADE_MED_U";
+	};
+
 };
