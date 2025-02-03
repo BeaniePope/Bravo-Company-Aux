@@ -16,7 +16,8 @@ class CfgPatches
 			"BCR_MinigunBackpack_B",
 			"BCR_ANPRC76_B",
 			"BCR_ANPRC23_B",
-			"BCR_ANPRC2141_B"
+			"BCR_ANPRC2141_B",
+			"BCR_Radio_Backpack_1"
 		};
         weapons[]= 
         {
@@ -358,6 +359,11 @@ class CfgVehicles
 		maximumLoad=300;
 	};
 
+	class  BCR_Radio_Backpack_1: BCR_ANPRC2141_B
+	{
+		scope = 0;
+	};
+
 	//Backpacks
 	class minigunbackpack;
     class BCR_MinigunBackpack_B: minigunbackpack
@@ -370,8 +376,8 @@ class CfgVehicles
 	class BCR_Trooper_CLUB_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\CLUB.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_CLUB_U";
 	};
@@ -379,8 +385,8 @@ class CfgVehicles
 	class BCR_Trooper_CLUB_MED_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\CLUB_MED.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_CLUB_MED_U";
 	};
@@ -388,8 +394,8 @@ class CfgVehicles
 	class BCR_Trooper_DIAMOND_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\DIAMOND.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_DIAMOND_U";
 	};
@@ -397,8 +403,8 @@ class CfgVehicles
 	class BCR_Trooper_DIAMOND_MED_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\DIAMOND_MED.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_DIAMOND_MED_U";
 	};
@@ -406,8 +412,8 @@ class CfgVehicles
 	class BCR_Trooper_HEART_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\HEART.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_HEART_U";
 	};
@@ -415,8 +421,8 @@ class CfgVehicles
 	class BCR_Trooper_HEART_MED_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\HEART_MED.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_HEART_MED_U";
 	};
@@ -424,8 +430,8 @@ class CfgVehicles
 	class BCR_Trooper_SPADE_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\SPADE.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_SPADE_U";
 	};
@@ -433,8 +439,8 @@ class CfgVehicles
 	class BCR_Trooper_SPADE_MED_UN:PSC_NCR_Trooper_Brown_UN{
 		hiddenSelectionsTextures[]={ 
 			"BCR_Equipment\data\textures\SPADE_MED.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
-				"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperBelt_CO.paa",
+			"PSC_Equipment\NCR\data\uniforms\brown\NCRTrooperGlovesBoots_CO.paa"
 		};
 		uniformClass="BCR_Trooper_SPADE_MED_U";
 	};
