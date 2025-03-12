@@ -17,13 +17,29 @@ class CfgPatches
 			"BCR_ANPRC76_B",
 			"BCR_ANPRC23_B",
 			"BCR_ANPRC2141_B",
-			"BCR_Radio_Backpack_1"
+			"BCR_Radio_Backpack_1",
+			"BCR_Trooper_CLUB_U",
+			"BCR_Trooper_DIAMOND_U",
+			"BCR_Trooper_HEART_U",
+			"BCR_Trooper_SPADE_U",
+			"BCR_Trooper_CLUB_MED_U"
+			"BCR_Trooper_DIAMOND_MED_U",
+			"BCR_Trooper_HEART_MED_U",
+			"BCR_Trooper_SPADE_MED_U",
+			"BCR_Trooper_CLUB_UN",
+			"BCR_Trooper_DIAMOND_UN",
+			"BCR_Trooper_HEART_UN",
+			"BCR_Trooper_SPADE_UN",
+			"BCR_Trooper_CLUB_MED_UN"
+			"BCR_Trooper_DIAMOND_MED_UN",
+			"BCR_Trooper_HEART_MED_UN",
+			"BCR_Trooper_SPADE_MED_UN"
 		};
         weapons[]= 
         {
-			"BCR_MissileLauncher",
-			"BCR_MissileLauncherSight",
-			"BCR_MissileLauncherSight_Shark"
+			"BCR_Rockwell_Launcher",
+			"BCR_Trooper_HELM_H",
+			"BCR_Trooper_HELM_MED_H"
         };
 	};
 };
@@ -31,136 +47,196 @@ class CfgPatches
 class Components;
 class SensorTemplateVisual;
 
+class CfgFunctions
+{
+	class BCR
+	{
+		class functions
+		{
+			class radialPAK
+			{
+				file = "BCR_Equipment\data\functions\fn_radialPAK.sqf";
+			};
+		};
+	};
+};
 
 class CfgAmmo
 {
-	class M_NLAW_AT_F;
-	class BCR_Missile_AT: M_NLAW_AT_F
+	class Sh_125mm_APFSDS;
+	class M_Titan_AT;
+	class BCR_Ammo_AT_penetrator: Sh_125mm_APFSDS
 	{
-		hit = 1020;
-		indirectHit = 25;
-		indirectHitRange = 2.4;
-		proximityExplosionDistance = 5;
-		explosive = 0.5;
-		maneuvrability = 2;
-		simulationStep = 0.002;
-		trackOversteer = 0.8;
-		trackLead = 1;
-		irLock = 1;
-		aiAmmoUsageFlags = "128 + 512";
-		maxControlRange = 11;
-		model = "\A3\weapons_f\launchers\nlaw\nlaw_rocket";
-		cost = 400;
-		timeToLive = 8;
-		airFriction = 0.09;
-		sideAirFriction = 0.5;
-		maxSpeed = 360;
-		initTime = 0.2;
-		thrustTime = 0.8;
-		thrust = 200;
-		fuseDistance = 20;
-		effectsMissile = "missile3";
-		whistleDist = 16;
-		CraterEffects = "ATRocketCrater";
-		explosionEffects = "ATRocketExplosion";
-		effectsMissileInit = "";
-		allowAgainstInfantry = 0;
-		soundHit[] = {"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\NLAW_Hit",1.7782794,1,1500};
-		soundFly[] = {"A3\Sounds_F\arsenal\weapons\Launchers\NLAW\Fly_NLAW",0.56234133,1.5,700};
-		class CamShakeExplode
+		caliber=6.6666698;
+		warheadName="HEAT";
+		typicalSpeed=1000;
+		deflecting=0;
+		deflectionDirDistribution=0;
+		penetrationDirDistribution=0;
+		timeToLive=0.0099999998;
+		simulationStep=0.00050000002;
+		airFriction=-0.5;
+		whistleOnFire=0;
+		whistleDist=0;
+		submunitionConeType[]=
 		{
-			power = 11;
-			duration = 1.4;
-			frequency = 20;
-			distance = 91.3296;
+			"randomcenter",
+			30
 		};
-		class CamShakeHit
+		// submunitionAmmo="rhs_ammo_spall";
+		// submunitionDirectionType="SubmunitionModelDirection";
+		// submunitionInitialOffset[]={0,0,-0.40000001};
+		// submunitionParentSpeedCoef=0;
+		// submunitionInitSpeed=200;
+		deleteParentWhenTriggered=0;
+		triggerTime=0.003;
+		model="\A3\Weapons_f\empty";
+		SoundSetExplosion[]=
 		{
-			power = 110;
-			duration = 0.6;
-			frequency = 20;
-			distance = 1;
+			"Silence_SoundSet"
 		};
-		class CamShakeFire
+	};
+	class BCR_Rockwell_Ammo_AT_penetrator: XV_Ammo_AT_penetrator
+	{
+		warheadName="TandemHEAT";
+		caliber=50.666698;
+	};	
+
+	class BCR_Rockwell_Ammo_AT: M_Titan_AT
+	{
+		afMax=200;
+		aiAmmoUsageFlags="128 + 512";
+		audibleFire=32;
+		caliber=1;
+		warheadName="TandemHEAT";
+		submunitionAmmo="XV_Ammo_AT_penetrator";
+		submunitionDirectionType="SubmunitionModelDirection";
+		submunitionInitialOffset[]={0,0,-0.1};
+		submunitionParentSpeedCoef=0;
+		submunitionInitSpeed=1053;
+		triggerOnImpact=1;
+        manualControl=1;
+        maxControlRange=5000;
+		deleteParentWhenTriggered=0;
+        model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at";
+		hit=350;
+		indirectHit=40;
+		indirectHitRange=4;
+		explosive=0.64999998;
+		flightProfiles[]=
 		{
-			power = 2.51487;
-			duration = 1.2;
-			frequency = 20;
-			distance = 50.5964;
+			"Direct",
+			"TopDown",
+			"Cruise"
 		};
-		class CamShakePlayerFire
+		class Direct
 		{
-			power = 2;
-			duration = 0.1;
-			frequency = 20;
-			distance = 1;
 		};
-		submunitionAmmo = "ammo_Penetrator_NLAW";
-		submunitionDirectionType = "SubmunitionTargetDirection";
-		submunitionInitSpeed = 1000;
-		submunitionParentSpeedCoef = 0.0;
-		submunitionInitialOffset[] = {0,0,-0.5};
-		triggerOnImpact = 1;
-		triggerDistance = 2.5;
-		deleteParentWhenTriggered = 0;
-		flightProfiles[] = {"Direct","Overfly"};
-		class Direct{};
-		class Overfly: Direct
+		class TopDown
 		{
-			overflyElevation = 2.5;
+			ascendHeight=160;
+			descendDistance=200;
+			minDistance=150;
+			ascendAngle=45;
 		};
-		airLock = 1;
-		missileLockCone = 5;
-		missileKeepLockedCone = 300;
-		missileLockMaxDistance = 800;
-		missileLockMinDistance = 20;
-		missileLockMaxSpeed = 35;
-		weaponLockSystem = "1 + 16";
-		cmImmunity = 0.2;
-		class Components: Components
+		class Cruise
 		{
-			class SensorsManagerComponent
-			{
-				class Components
-				{
-					class VisualSensorComponent: SensorTemplateVisual
-					{
-						class AirTarget
-						{
-							minRange = 500;
-							maxRange = 800;
-							objectDistanceLimitCoef = -1;
-							viewDistanceLimitCoef = 1;
-						};
-						class GroundTarget
-						{
-							minRange = 500;
-							maxRange = 800;
-							objectDistanceLimitCoef = 1;
-							viewDistanceLimitCoef = 1;
-						};
-						maxTrackableSpeed = 35;
-						nightRangeCoef = 0.8;
-						angleRangeHorizontal = 5;
-						angleRangeVertical = 5;
-						maxTrackableATL = 20;
-					};
-				};
-			};
+			preferredFlightAltitude=60;
+			lockDistanceToTarget=1000;
 		};
+		irLock=1;
+		laserLock=1;
+		nvLock=0;
+		airLock=1;
+		autoSeekTarget=0;
+		allowAgainstInfantry=0;
+		airFriction=0.2;
+		sideAirFriction=0.34999999;
+		trackOversteer=1.4;
+		trackLead=1;
+		maxSpeed=460;
+		maneuvrability=32;
+		manualControl=0;
+		maxControlRange=4000;
+		fuseDistance=30;
+		thrust=75;
+		thrustTime=5.1999998;
+		initTime=0;
+		timeToLive=60;
+		whistleDist=4;
+		deflecting=0;
+		simulationStep=0.001;
+		cmImmunity=0.89999998;
+		cost=1000;
+		effectsMissile="missile3";
+		effectsMissileInit="RocketBackEffectsRPG";
+		effectsSmoke="SmokeShellWhite";
+		missileLockMaxDistance=3000;
+		missileLockMinDistance=100;
+		missileLockMaxSpeed=41;
+		missileLockCone=10;
+		weaponLockSystem="2 + 16";
+	};
+	class M_Titan_AA;
+	class BCR_Rockwell_Ammo_AA: M_Titan_AA
+	{
+		cmImmunity=1;
+		hit=800;
+		indirectHit=200;
+		indirectHitRange=4;
+		explosive=1;
+		effectsMissile="missile3";
+		warheadName="AA";
+		missileLockMaxDistance=4000;
+		manueuvrability=30;
+		sideAirFriction=0.02;
+		missileKeepLockedCone=360;
 	};
 };	
 
 class CfgMagazines
 {
 	class NLAW_F;
-	class BCR_MissileLauncher_Mag: NLAW_F
+	class Titan_AT;
+	class Titan_AA;
+    class BCR_Rockwell_AT_mag: Titan_AT
 	{
-		displayName = "[1ST] Missile MK2";
-		ammo = "BCR_Missile_AT";
-		model = "";
-		modelSpecial = "";
+		ammo="BCR_Rockwell_Ammo_AT";
+		JLTS_hasElectronics=1;
+		displaynameshort="AT";
+		JLTS_hasEMPProtection=1;
+		author="AR121";
+		scope=2;
+		mass=100;
+		scopeArsenal=2;
+		displayName="[XV] Rockwell AT Rocket";
+		descriptionShort="AT Rocket";
+		model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at";
+		picture="\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_at_CA.paa";
+		count=1;
 	};
+    class BCR_Rockwell_AA_mag: Titan_AA
+	{
+		ammo="BCR_Rockwell_Ammo_AA";
+		JLTS_hasElectronics=1;
+		JLTS_hasEMPProtection=1;
+		author="AR121";
+		displaynameshort="AA";
+		scope=2;
+		mass=40;
+		scopeArsenal=2;
+		displayName="[XV] Rockwell AA Rocket";
+		descriptionShort="AA Rocket";
+		model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at";
+		picture="\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
+		count=1;
+	};
+
+	class 10Rnd_12ga_sl_Mag;
+	class 12Rnd_12ga_sl_Mag;
+	class 6Rnd_12ga_sl_Mag;
+
+
 };
 
 class CfgMagazineWells
@@ -176,57 +252,70 @@ class CfgMagazineWells
 
 class CfgWeapons
 {
-		class ItemInfo;
+	class ItemInfo;
 	class AM_launch_MissileLauncher;
 	class AM_launch_MissileLauncherSight;
 	class AM_launch_MissileLauncherSight_Shark;
+	class AM_HuntingShotgun;
+	class AM_ComShot_Classic;
+	class AM_CAWS;
 	class PSC_NCR_Trooper_Brown_U;
 	class PSC_NCR_Trooper_Brown_H;
 
-	class BCR_MissileLauncher: AM_launch_MissileLauncher
+	class BCR_HuntingShotgun: AM_HuntingShotgun
 	{
-		displayName = "[1ST] LGAW MK2";
-		ace_reloadlaunchers_enabled = 1;
-		magazines[]=
+		displayName = "[1ST] Hunting Shotgun";
+		magazines[] = 
 		{
-			"BCR_MissileLauncher_Mag"
+			
 		};
-		magazineWell[]=
-		{
-			"BCR_MissileTube_Well"
-		};
-		descriptionShort = "NCR's newest Last Generation AT weapon.";
 	};
 
-	class BCR_MissileLauncherSight: AM_launch_MissileLauncherSight
+	class launch_Titan_base;
+	class launch_Titan_short_base: launch_Titan_base
 	{
-		displayName = "[1ST] LGAW MK2 (Guided)";
-		ace_reloadlaunchers_enabled = 1;
+		class WeaponSlotsInfo;
+	};
+	class Rockwell_AT: launch_Titan_short_base
+	{
+		class WeaponSlotsInfo;
+	};
+	class BCR_Rockwell_Launcher: Rockwell_AT
+	{
+		picture = "\Sterben_TOP\am_firearms\launchers\missilelauncher\ui\MISSILELAUNCHER_ca.paa";
+		author="AR121";
+		scope=2;
+		scopeArsenal=2;
+        canLock=2;
+		opticsZoomMin=0.1083;
+		opticsZoomMax=0.1083;
+		opticsZoomInit=0.1083;
+		cameraDir="look";
+		cursor="missile";
+		ace_overpressure_angle=45;
+		ace_overpressure_damage=0.40000001;
+		ace_overpresssure_priority=1;
+		ace_overpressure_range=10;
+		displayName="[1ST] LGAW MK2";
+		descriptionShort="Guided Missile Launcher";
+        model = "\Sterben_TOP\am_firearms\launchers\missilelauncher\AM_missilelauncher.p3d";
+		modelspecial = "\Sterben_TOP\am_firearms\launchers\missilelauncher\AM_missilelauncher_Loaded.p3d";
+        handAnim[] = {"OFP2_ManSkeleton","\a3\Weapons_F_Tank\Launchers\MRAWS\Data\Anim\MRAWS.rtm"};
 		magazines[]=
 		{
-			"BCR_MissileLauncher_Mag"
+			"BCR_Rockwell_AT_mag",
+			"BCR_Rockwell_AA_mag"
 		};
 		magazineWell[]=
 		{
 			"BCR_MissileTube_Well"
 		};
-		descriptionShort = "NCR's newest Last Generation AT weapon.";
-	};
-	class BCR_MissileLauncherSight_Shark: AM_launch_MissileLauncherSight_Shark
-	{
-		displayName = "[1ST] LGAW MK2 (Guided/Painted)";
-		ace_reloadlaunchers_enabled = 1;
-		magazines[]=
+		class WeaponSlotsInfo: WeaponSlotsInfo
 		{
-			"BCR_MissileLauncher_Mag"
+			mass=220;
 		};
-		magazineWell[]=
-		{
-			"BCR_MissileTube_Well"
-		};
-		descriptionShort = "NCR's newest Last Generation AT weapon.";
 	};
-
+	
 
 	class BCR_Trooper_CLUB_U:PSC_NCR_Trooper_Brown_U{
 		displayName = "[1ST] NCR Trooper Uniform (Club)";
@@ -444,5 +533,67 @@ class CfgVehicles
 		};
 		uniformClass="BCR_Trooper_SPADE_MED_U";
 	};
+
+	class ACE_fastropingSupplyCrate;
+	class XV_VehResupplyBox: ACE_fastropingSupplyCrate
+    {
+        displayName = "[1ST] Resupply Box";
+        editorCategory = "EdCat_Supplies";
+        editorSubcategory = "EdSubcat_Military";
+        scope = 2;
+        ace_repair_canRepair=1;
+        ace_rearm_defaultSupply=1200;
+        ace_refuel_fuelCargo=3000;
+        maximumLoad = 100000000;
+		ace_dragging_ignoreWeight=1;
+        ace_dragging_ignoreWeightCarry=1;
+        ace_cargo_size = 4;  // Cargo space the object takes
+        ace_cargo_canLoad = 1;  // Enables the object to be loaded (1-yes, 0-no)
+        ace_cargo_noRename = 0;  // Blocks renaming object (1-blocked, 0-allowed)
+        ace_cargo_blockUnloadCarry = 1; // Blocks object from being automatically picked up by player on unload
+        class TransportMagazines
+		{
+			MAG_XX(20Rnd_556x45_Mag,40);
+
+		};
+        class TransportItems
+        {
+            ITEM_XX(ACE_packingBandage,60);
+            ITEM_XX(ACE_elasticBandage,60);
+            ITEM_XX(ACE_quikclot,60);
+            ITEM_XX(ACE_splint,40);
+            ITEM_XX(ACE_epinephrine,20);
+            ITEM_XX(ACE_morphine,20);
+            ITEM_XX(ACE_tourniquet,40);
+            ITEM_XX(dev_enzymeCapsule_refined,20);
+            ITEM_XX(ACE_salineIV,60);
+            ITEM_XX(ACE_salineIV_500,60);
+            ITEM_XX(ACE_salineIV_250,60);
+            ITEM_XX(ACE_EntrenchingTool,5);
+            ITEM_XX(ACE_IR_Strobe_Item,20);
+            ITEM_XX(ACE_CableTie,30);
+        };
+		class TransportWeapons
+		{
+			
+		};
+        class ACE_Actions
+        {
+            class ACE_MainActions
+            {
+                condition = "true";
+                displayName = "Interactions";
+                distance = 5;
+                selection = "";
+                class XVA_healEveryone
+                {
+                    condition = "alive _target";
+                    displayName = "PAK within 5 meters";
+                    showDisabled = 0;
+                    statement = "[_target,10] call XVA_FNC_radialPAK";
+                };
+            };
+        }; 
+    };
 
 };
