@@ -67,6 +67,7 @@ class CfgFunctions
 
 class CfgAmmo
 {
+	class B_12Gauge_Slug;
 	class Sh_125mm_APFSDS;
 	class M_Titan_AT;
 	class BCR_Ammo_AT_penetrator: Sh_125mm_APFSDS
@@ -194,6 +195,13 @@ class CfgAmmo
 		sideAirFriction=0.02;
 		missileKeepLockedCone=360;
 	};
+
+	class BCR_12g_slug: B_12Gauge_Slug
+	{
+		hit = 69;
+		typicalSpeed = 800;
+		cost = 8;
+	};
 };	
 
 class CfgMagazines
@@ -233,12 +241,27 @@ class CfgMagazines
 	class 10Rnd_12ga_sl_Mag;
 	class 12Rnd_12ga_sl_Mag;
 	class 6Rnd_12ga_sl_Mag;
+	class BCR_5Rnd_HuntingShotgun_Mag: 6Rnd_12ga_sl_Mag
+	{
+		ammo="BCR_12g_slug";
+		author="SadBear";
+		displayName="[1ST] 5Rnd 12ga Hunting Shotgun Mag";
+		scope=2;
+		count=5;
+	};
 
 
 };
 
 class CfgMagazineWells
 {
+	class BCR_HuntingShotgun_Well
+	{
+		magazines[] =
+		{
+			"BCR_5Rnd_HuntingShotgun_Mag"
+		};
+	};
 	class BCR_MissileTube_Well
 	{
 		magazines[] = 
@@ -263,9 +286,10 @@ class CfgWeapons
 	class BCR_HuntingShotgun: AM_HuntingShotgun
 	{
 		displayName = "[1ST] Hunting Shotgun";
+		author = "SadBear";
 		magazines[] = 
 		{
-			
+			"BCR_5Rnd_HuntingShotgun_Mag"
 		};
 	};
 
