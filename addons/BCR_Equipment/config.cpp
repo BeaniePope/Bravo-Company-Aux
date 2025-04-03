@@ -1,3 +1,7 @@
+#define MAG_XX(a,b) class _xx_##a {magazine = a; count = b;}
+#define WEAP_XX(a,b) class _xx_##a {weapon = a; count = b;}
+#define ITEM_XX(a,b) class _xx_##a {name = a; count = b;}
+
 
 class CfgPatches
 {
@@ -22,7 +26,7 @@ class CfgPatches
 			"BCR_Trooper_DIAMOND_U",
 			"BCR_Trooper_HEART_U",
 			"BCR_Trooper_SPADE_U",
-			"BCR_Trooper_CLUB_MED_U"
+			"BCR_Trooper_CLUB_MED_U",
 			"BCR_Trooper_DIAMOND_MED_U",
 			"BCR_Trooper_HEART_MED_U",
 			"BCR_Trooper_SPADE_MED_U",
@@ -30,7 +34,7 @@ class CfgPatches
 			"BCR_Trooper_DIAMOND_UN",
 			"BCR_Trooper_HEART_UN",
 			"BCR_Trooper_SPADE_UN",
-			"BCR_Trooper_CLUB_MED_UN"
+			"BCR_Trooper_CLUB_MED_UN",
 			"BCR_Trooper_DIAMOND_MED_UN",
 			"BCR_Trooper_HEART_MED_UN",
 			"BCR_Trooper_SPADE_MED_UN"
@@ -96,7 +100,7 @@ class CfgAmmo
 			"Silence_SoundSet"
 		};
 	};
-	class BCR_Rockwell_Ammo_AT_penetrator: XV_Ammo_AT_penetrator
+	class BCR_Rockwell_Ammo_AT_penetrator: BCR_Ammo_AT_penetrator
 	{
 		warheadName="TandemHEAT";
 		caliber=50.666698;
@@ -109,7 +113,7 @@ class CfgAmmo
 		audibleFire=32;
 		caliber=1;
 		warheadName="TandemHEAT";
-		submunitionAmmo="XV_Ammo_AT_penetrator";
+		submunitionAmmo="BCR_Ammo_AT_penetrator";
 		submunitionDirectionType="SubmunitionModelDirection";
 		submunitionInitialOffset[]={0,0,-0.1};
 		submunitionParentSpeedCoef=0;
@@ -156,8 +160,6 @@ class CfgAmmo
 		trackLead=1;
 		maxSpeed=460;
 		maneuvrability=32;
-		manualControl=0;
-		maxControlRange=4000;
 		fuseDistance=30;
 		thrust=75;
 		thrustTime=5.1999998;
@@ -202,14 +204,12 @@ class CfgMagazines
     class BCR_Rockwell_AT_mag: Titan_AT
 	{
 		ammo="BCR_Rockwell_Ammo_AT";
-		JLTS_hasElectronics=1;
 		displaynameshort="AT";
-		JLTS_hasEMPProtection=1;
 		author="AR121";
 		scope=2;
-		mass=100;
+		mass=50;
 		scopeArsenal=2;
-		displayName="[XV] Rockwell AT Rocket";
+		displayName="[1ST] LGAW AT Rocket";
 		descriptionShort="AT Rocket";
 		model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at";
 		picture="\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_at_CA.paa";
@@ -218,14 +218,12 @@ class CfgMagazines
     class BCR_Rockwell_AA_mag: Titan_AA
 	{
 		ammo="BCR_Rockwell_Ammo_AA";
-		JLTS_hasElectronics=1;
-		JLTS_hasEMPProtection=1;
 		author="AR121";
 		displaynameshort="AA";
 		scope=2;
 		mass=40;
 		scopeArsenal=2;
-		displayName="[XV] Rockwell AA Rocket";
+		displayName="[1ST] LGAW AA Rocket";
 		descriptionShort="AA Rocket";
 		model="\A3\Weapons_F_beta\Launchers\titan\titan_missile_at";
 		picture="\A3\Weapons_F_beta\Launchers\titan\Data\UI\gear_titan_missile_atl_CA.paa";
@@ -585,12 +583,12 @@ class CfgVehicles
                 displayName = "Interactions";
                 distance = 5;
                 selection = "";
-                class XVA_healEveryone
+                class BCR_healEveryone
                 {
                     condition = "alive _target";
                     displayName = "PAK within 5 meters";
                     showDisabled = 0;
-                    statement = "[_target,10] call XVA_FNC_radialPAK";
+                    statement = "[_target,10] call BCR_FNC_radialPAK";
                 };
             };
         }; 
