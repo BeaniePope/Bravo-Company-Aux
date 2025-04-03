@@ -43,7 +43,8 @@ class CfgPatches
         {
 			"BCR_Rockwell_Launcher",
 			"BCR_Trooper_HELM_H",
-			"BCR_Trooper_HELM_MED_H"
+			"BCR_Trooper_HELM_MED_H",
+			"BCR_HuntingShotgun"
         };
 	};
 };
@@ -249,8 +250,6 @@ class CfgMagazines
 		scope=2;
 		count=5;
 	};
-
-
 };
 
 class CfgMagazineWells
@@ -287,9 +286,16 @@ class CfgWeapons
 	{
 		displayName = "[1ST] Hunting Shotgun";
 		author = "SadBear";
+		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
 		magazines[] = 
 		{
 			"BCR_5Rnd_HuntingShotgun_Mag"
+		};
+		magazineWell[]=
+		{
+			"BCR_HuntingShotgun_Well"
 		};
 	};
 
